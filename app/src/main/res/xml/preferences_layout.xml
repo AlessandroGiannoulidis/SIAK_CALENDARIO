@@ -1,0 +1,185 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+        android:key="compactLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="false"
+        android:summaryOn="@string/compact_layout_on_desc"
+        android:summaryOff="@string/compact_layout_off_desc"
+        android:title="@string/compact_layout_title" />
+
+    <PreferenceCategory app:title="@string/widget_header">
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:key="widgetHeaderLayout"
+            android:defaultValue="ONE_ROW"
+            android:entries="@array/pref_widget_header_layout_entries"
+            android:entryValues="@array/pref_widget_header_layout_values"
+            android:summary="@string/single_line_layout"
+            android:title="@string/widget_header_layout" />
+
+        <org.andstatus.todoagenda.prefs.dateformat.DateFormatPreference
+            android:key="widgetHeaderDateFormat"
+            android:defaultValue="deviceDefault:"
+            android:title="@string/widget_header_date_format" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/day_header">
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="showDayHeaders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:summary="@string/appearance_show_day_headers_desc"
+            android:title="@string/appearance_show_day_headers_title" />
+
+        <org.andstatus.todoagenda.prefs.dateformat.DateFormatPreference
+            android:key="dayHeaderDateFormat"
+            android:defaultValue="defaultWeekday:"
+            android:title="@string/day_header_date_format"
+            android:dependency="showDayHeaders" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="showPastEventsUnderOneHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:title="@string/show_past_events_under_one_header_title"
+            android:summary="@string/show_past_events_under_one_header_desc"
+            android:dependency="showDayHeaders" />
+
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:key="dayHeaderAlignment"
+            android:defaultValue="RIGHT"
+            android:dependency="showDayHeaders"
+            android:entries="@array/pref_day_header_alignment_entries"
+            android:entryValues="@array/pref_day_header_alignment_values"
+            android:summary="@string/appearance_day_header_alignment_desc"
+            android:title="@string/appearance_day_header_alignment_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="horizontalLineBelowDayHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:title="@string/horizontalLineBelowDayHeader"
+            android:dependency="showDayHeaders" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="showDaysWithoutEvents"
+            android:defaultValue="false"
+            android:dependency="showDayHeaders"
+            android:summary="@string/appearance_show_days_without_events_desc"
+            android:title="@string/appearance_show_days_without_events_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/event_entry">
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:key="eventEntryLayout"
+            android:defaultValue="DEFAULT"
+            android:entries="@array/pref_event_entry_layout_entries"
+            android:entryValues="@array/pref_event_entry_layout_values"
+            android:summary="@string/default_multiline_layout"
+            android:title="@string/pref_event_entry_layout_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="showEventIcon"
+            android:defaultValue="true"
+            android:summary="@string/show_event_icon_desc"
+            android:title="@string/show_event_icon_title" />
+
+        <org.andstatus.todoagenda.prefs.dateformat.DateFormatPreference
+            android:key="entryDateFormat"
+            android:defaultValue="days:"
+            android:title="@string/entry_date_format" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="multiline_title"
+            android:defaultValue="false"
+            android:summary="@string/appearance_multiline_title_desc"
+            android:title="@string/appearance_multiline_title_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineEditTextPreference
+            android:key="maxLinesTitle"
+            android:defaultValue="5"
+            android:summary="5"
+            android:title="@string/maxlines_title_title"
+            android:dependency="multiline_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="multiline_details"
+            android:defaultValue="false"
+            android:summary="@string/multiline_details_desc"
+            android:title="@string/multiline_details_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineEditTextPreference
+            android:key="maxLinesDetails"
+            android:defaultValue="5"
+            android:summary="5"
+            android:title="@string/maxlines_details_title"
+            android:dependency="multiline_details" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/other_widget_parts">
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="showCurrentTimeLine"
+            android:defaultValue="false"
+            android:summary="@string/show_current_time_line_desc"
+            android:title="@string/show_current_time_line_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:key="showTimeUntilTag"
+            android:defaultValue="false"
+            android:summary="@string/show_time_until_desc"
+            android:title="@string/show_time_until_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="empty"
+            android:entries="@array/pref_last_entry_entries"
+            android:entryValues="@array/pref_last_entry_values"
+            android:key="lastEntryAppearance"
+            android:summary="@string/last_entry_with_message"
+            android:title="@string/last_entry_title" />
+
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:key="corner_radius"
+            android:defaultValue="8"
+            android:title="Angoli arrotondati"
+            android:summary="Definisci il livello di arrotondamento degli angoli del widget"
+            android:entries="@array/corner_radius_labels"
+            android:entryValues="@array/corner_radius_values" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Aspetto widget">
+
+        <ListPreference
+            android:key="corner_radius"
+            android:title="Arrotondamento angoli widget"
+            android:summary="Scegli quanto arrotondare gli angoli del widget"
+            android:defaultValue="8"
+            android:entries="@array/corner_radius_labels"
+            android:entryValues="@array/corner_radius_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dimensione testo widget">
+
+        <ListPreference
+            android:key="header_text_size"
+            android:title="Dimensione testo intestazione"
+            android:defaultValue="16"
+            android:entries="@array/pref_text_size_labels"
+            android:entryValues="@array/pref_text_size_values" />
+
+        <ListPreference
+            android:key="event_text_size"
+            android:title="Dimensione testo eventi"
+            android:defaultValue="14"
+            android:entries="@array/pref_text_size_labels"
+            android:entryValues="@array/pref_text_size_values" />
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

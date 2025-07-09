@@ -1,0 +1,70 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/past_events">
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="NONE"
+            android:entries="@array/pref_events_ended_entries"
+            android:entryValues="@array/pref_events_ended_values"
+            android:key="eventsEnded"
+            android:summary="@string/this_option_is_turned_off"
+            android:title="@string/pref_events_ended_title" />
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:defaultValue="false"
+            android:key="showPastEventsWithDefaultColor"
+            android:title="@string/show_past_events_with_default_color_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/current_and_future_events">
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="30"
+            android:entries="@array/pref_event_range_entries"
+            android:entryValues="@array/pref_event_range_values"
+            android:key="eventRange"
+            android:summary="@string/event_range_one_month"
+            android:title="@string/event_details_event_range_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/all_events">
+        <org.andstatus.todoagenda.prefs.MultilineEditTextPreference
+            android:key="hideBasedOnKeywords"
+            android:summary="@string/this_option_is_turned_off"
+            android:title="@string/pref_hide_based_on_keywords_title" />
+        <org.andstatus.todoagenda.prefs.MultilineEditTextPreference
+            android:key="showBasedOnKeywords"
+            android:summary="@string/this_option_is_turned_off"
+            android:title="@string/pref_show_based_on_keywords_title" />
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:defaultValue="false"
+            android:key="showOnlyClosestInstanceOfRecurringEvent"
+            android:title="@string/show_only_closest_instance_of_recurring_event" />
+        <org.andstatus.todoagenda.prefs.MultilineCheckBoxPreference
+            android:defaultValue="false"
+            android:key="hideDuplicates"
+            android:title="@string/hide_duplicates" />
+        <org.andstatus.todoagenda.prefs.MultilineEditTextPreference
+            android:defaultValue=""
+            android:key="maxNumberOfEvents"
+            android:title="@string/max_number_of_events_title" />
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="top_day"
+            android:entries="@array/pref_all_day_events_placement_entries"
+            android:entryValues="@array/pref_all_day_events_placement_values"
+            android:key="allDayEventsPlacement"
+            android:title="@string/all_day_events_placement_title" />
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="date_due"
+            android:entries="@array/pref_task_scheduling_entries"
+            android:entryValues="@array/pref_task_scheduling_values"
+            android:key="taskScheduling"
+            android:title="@string/task_scheduling_title" />
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="end_of_list"
+            android:entries="@array/pref_tasks_wo_dates_entries"
+            android:entryValues="@array/pref_tasks_wo_dates_values"
+            android:key="taskWithoutDates"
+            android:title="@string/tasks_wo_dates_title" />
+        <org.andstatus.todoagenda.prefs.MultilineListPreference
+            android:defaultValue="normal"
+            android:entries="@array/pref_filter_mode_entries"
+            android:entryValues="@array/pref_filter_mode_values"
+            android:key="filterMode"
+            android:title="@string/filter_mode" />
+    </PreferenceCategory>
+</PreferenceScreen>
